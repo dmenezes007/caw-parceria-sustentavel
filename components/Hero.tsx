@@ -17,14 +17,21 @@ export const Hero: React.FC = () => {
         </div>
         <div className="flex items-center space-x-4">
           <div className="flex -space-x-3 overflow-hidden">
-            {[1, 2, 3, 4].map((i) => (
-              <img
-                key={i}
-                className="inline-block h-12 w-12 rounded-full ring-4 ring-white"
-                src={`https://picsum.photos/100/100?random=${i}`}
-                alt="Team member"
-              />
-            ))}
+            <img
+              className="inline-block h-12 w-12 rounded-full ring-4 ring-white object-cover"
+              src="/photos/FC.png"
+              alt="Team member"
+            />
+            <img
+              className="inline-block h-12 w-12 rounded-full ring-4 ring-white object-cover"
+              src="/photos/MA.png"
+              alt="Team member"
+            />
+            <img
+              className="inline-block h-12 w-12 rounded-full ring-4 ring-white object-cover"
+              src="/photos/WW.png"
+              alt="Team member"
+            />
           </div>
           <p className="text-sm font-semibold text-slate-600">
             Equipe estável e engajada <br />
