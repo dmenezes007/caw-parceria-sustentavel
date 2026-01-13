@@ -87,7 +87,6 @@ export const BentoGrid: React.FC = () => {
       {/* 5. Final CTA / Data Points (Bottom Card) */}
       <div className="md:col-span-12 p-10 rounded-3xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="space-y-4 text-center md:text-left">
-          <BrainCircuit size={40} className="text-indigo-400 mx-auto md:mx-0" />
           <h3 className="text-3xl font-bold">Pronto para elevar o padrão da sua entrega jurídica?</h3>
           <p className="text-slate-400 max-w-xl">
             Nossos modelos híbridos equilibram a flexibilidade necessária com a segurança institucional que o seu negócio exige.
