@@ -27,9 +27,9 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:items-end space-y-4">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Baseado em evidências</span>
           <div className="flex items-center space-x-6 grayscale opacity-60">
-            <span className="text-lg font-bold text-slate-800">Migalhas</span>
-            <span className="text-lg font-bold text-slate-800">Gallup</span>
-            <span className="text-lg font-bold text-slate-800">Cajuína</span>
+            <a href="https://www.migalhas.com.br/depeso/441354/parceria-sustentavel-alinhando-entrega-juridica-e-cuidado-com-pessoas" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Migalhas</a>
+            <a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Gallup</a>
+            <a href="https://cajuina.org/principais/coluna-comp/o-custo-oculto-do-turnover/" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Cajuína</a>
           </div>
           <p className="text-xs text-slate-400 mt-8">
             © 2025 Corbo, Aguiar & Waise Adv. Ass. Todos os direitos reservados.
