@@ -21,17 +21,17 @@ export const Hero: React.FC = () => {
         <div className="flex items-center space-x-3 md:space-x-4">
           <div className="flex -space-x-3 overflow-hidden">
             <img
-              className="inline-block h-10 w-10 md:h-12 md:w-12 rounded-full ring-4 ring-white object-cover">
+              className="inline-block h-10 w-10 md:h-12 md:w-12 rounded-full ring-4 ring-white object-cover"
               src={photoFC}
               alt="Team member"
             />
             <img
-              className="inline-block h-10 w-10 md:h-12 md:w-12 rounded-full ring-4 ring-white object-cover">
+              className="inline-block h-10 w-10 md:h-12 md:w-12 rounded-full ring-4 ring-white object-cover"
               src={photoMA}
               alt="Team member"
             />
             <img
-              className="inline-block h-10 w-10 md:h-12 md:w-12 rounded-full ring-4 ring-white object-cover">
+              className="inline-block h-10 w-10 md:h-12 md:w-12 rounded-full ring-4 ring-white object-cover"
               src={photoWW}
               alt="Team member"
             />
