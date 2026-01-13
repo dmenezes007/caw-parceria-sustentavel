@@ -17,7 +17,7 @@ export const ComplianceView: React.FC = () => {
               <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-orange-600">
                 <Scale size={24} />
               </div>
-              <h3 className="text-xl font-bold text-slate-800">Alinhamento Lei 13.467/2017</h3>
+              <h3 className="text-xl font-bold text-slate-800">Alinhamento com a Lei 13.467/2017</h3>
             </div>
             <p className="text-slate-600 leading-relaxed">
               Nosso modelo operacional foi desenhado para respeitar estritamente a Reforma Trabalhista, garantindo que a prestação de serviços não gere passivos ocultos para nossos parceiros.
@@ -45,7 +45,7 @@ export const ComplianceView: React.FC = () => {
             Evite manchetes negativas e passivos trabalhistas. O compliance é a sua maior proteção institucional.
           </p>
           <div className="w-full pt-4 border-t border-slate-200">
-            <span className="text-xs font-bold text-slate-400 uppercase">ISO Friendly</span>
+            <span className="text-xs font-bold text-slate-400 uppercase">Alinhado às Normas ISO</span>
           </div>
         </div>
       </div>

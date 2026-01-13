@@ -18,7 +18,7 @@ export const ContactView: React.FC = () => {
         <button className="p-10 rounded-[2.5rem] bg-indigo-600 text-white text-left group transition-all hover:translate-y-[-4px] shadow-xl shadow-indigo-200">
           <Calendar size={40} className="mb-6 text-indigo-200" />
           <h3 className="text-2xl font-bold mb-2">Marcar Call Estratégica</h3>
-          <p className="text-indigo-100 mb-8 leading-relaxed">30 minutos para apresentarmos nosso dashboard real de performance.</p>
+          <p className="text-indigo-100 mb-8 leading-relaxed">30 minutos para apresentarmos nosso dashboard de performance.</p>
           <div className="inline-flex items-center space-x-2 font-bold group-hover:translate-x-2 transition-transform">
             <span>Ver horários</span>
             <ArrowRight size={20} />
@@ -48,7 +48,7 @@ export const ContactView: React.FC = () => {
           
           <div className="p-6 bg-slate-900 rounded-3xl text-center">
              <p className="text-xs font-bold text-slate-400 uppercase mb-2">Sua privacidade importa</p>
-             <p className="text-[10px] text-slate-500">Dados tratados conforme LGPD. Sem spam, apenas insights reais.</p>
+             <p className="text-[10px] text-slate-500">Dados tratados conforme LGPD.</p>
           </div>
         </div>
       </div>
