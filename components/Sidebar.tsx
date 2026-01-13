@@ -2,6 +2,7 @@
 import React from 'react';
 import { LayoutDashboard, Users, BarChart3, ShieldCheck, MessageSquareMore, Home } from 'lucide-react';
 import logoImage from './logo/complete-logo.png';
+import simpleLogoImage from './logo/simple-logo.png';
 
 interface SidebarProps {
   activeTab: string;
@@ -22,9 +23,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
       {/* Brand Logo */}
       <div className="px-6 mb-12 flex items-center justify-center md:justify-start">
         <img 
+          src={simpleLogoImage} 
+          alt="CAW Parceria Sustentável" 
+          className="w-full h-auto object-contain md:hidden"
+        />
+        <img 
           src={logoImage} 
           alt="CAW Parceria Sustentável" 
-          className="w-full h-auto object-contain"
+          className="w-full h-auto object-contain hidden md:block"
         />
       </div>
 
