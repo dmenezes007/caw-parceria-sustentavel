@@ -24,7 +24,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
         <img 
           src={logoImage} 
           alt="CAW Parceria Sustentável" 
-          className="h-10 w-auto object-contain"
+          className="w-full h-auto object-contain"
         />
       </div>
 
