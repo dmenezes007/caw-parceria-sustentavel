@@ -1,6 +1,9 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import photoFC from './photos/FC.png';
+import photoMA from './photos/MA.png';
+import photoWW from './photos/WW.png';
 
 export const Hero: React.FC = () => {
   return (
@@ -19,17 +22,17 @@ export const Hero: React.FC = () => {
           <div className="flex -space-x-3 overflow-hidden">
             <img
               className="inline-block h-12 w-12 rounded-full ring-4 ring-white object-cover"
-              src="/photos/FC.png"
+              src={photoFC}
               alt="Team member"
             />
             <img
               className="inline-block h-12 w-12 rounded-full ring-4 ring-white object-cover"
-              src="/photos/MA.png"
+              src={photoMA}
               alt="Team member"
             />
             <img
               className="inline-block h-12 w-12 rounded-full ring-4 ring-white object-cover"
-              src="/photos/WW.png"
+              src={photoWW}
               alt="Team member"
             />
           </div>
