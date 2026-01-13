@@ -52,11 +52,7 @@ export const ComparisonTable: React.FC = () => {
               </td>
               <td className="py-6 px-4">
                 <div className="flex items-center space-x-2">
-                  {row.status === 'warning' ? (
-                    <AlertTriangle size={18} className="text-amber-500 flex-shrink-0" />
-                  ) : (
-                    <CircleDashed size={18} className="text-slate-300 flex-shrink-0" />
-                  )}
+                  <AlertTriangle size={18} className="text-amber-500 flex-shrink-0" />
                   <span className="text-slate-500">{row.outros}</span>
                 </div>
               </td>
