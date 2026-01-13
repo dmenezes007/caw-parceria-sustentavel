@@ -1,0 +1,42 @@
+{
+  "name": "caw-parceria-sustentavel",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "One-pager web app for legal partnerships highlighting predictability, efficiency, and sustainability",
+  "author": "dmenezes007",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmenezes007/caw-parceria-sustentavel.git"
+  },
+  "homepage": "https://github.com/dmenezes007/caw-parceria-sustentavel#readme",
+  "bugs": {
+    "url": "https://github.com/dmenezes007/caw-parceria-sustentavel/issues"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "legal-partnerships",
+    "sustainability",
+    "one-pager"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "lucide-react": "^0.562.0",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

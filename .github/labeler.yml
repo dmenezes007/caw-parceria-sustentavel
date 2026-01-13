@@ -1,0 +1,39 @@
+# Configuration for github/labeler action
+# Automatically label pull requests based on changed files
+
+'documentation':
+  - '**/*.md'
+  - 'docs/**/*'
+
+'dependencies':
+  - 'package.json'
+  - 'package-lock.json'
+  - 'yarn.lock'
+  - 'pnpm-lock.yaml'
+
+'configuration':
+  - '*.config.js'
+  - '*.config.ts'
+  - '.github/**/*'
+  - 'tsconfig.json'
+  - '.eslintrc*'
+  - '.prettierrc*'
+  - '.editorconfig'
+
+'components':
+  - 'components/**/*'
+
+'styles':
+  - '**/*.css'
+  - 'src/styles/**/*'
+
+'typescript':
+  - '**/*.ts'
+  - '**/*.tsx'
+
+'tests':
+  - '**/*.test.ts'
+  - '**/*.test.tsx'
+  - '**/*.spec.ts'
+  - '**/*.spec.tsx'
+  - 'tests/**/*'

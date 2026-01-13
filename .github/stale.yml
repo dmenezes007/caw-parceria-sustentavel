@@ -1,0 +1,49 @@
+# Configuration for probot-stale - https://github.com/probot/stale
+
+# Number of days of inactivity before an Issue or Pull Request becomes stale
+daysUntilStale: 90
+
+# Number of days of inactivity before an Issue or Pull Request with the stale label is closed
+daysUntilClose: 14
+
+# Only issues or only pull requests can be marked as stale independently
+onlyLabels: []
+
+# Issues or Pull Requests with these labels will never be considered stale
+exemptLabels:
+  - pinned
+  - security
+  - critical
+  - bug
+  - enhancement
+
+# Set to true to ignore issues in a project (defaults to false)
+exemptProjects: false
+
+# Set to true to ignore issues in a milestone (defaults to false)
+exemptMilestones: false
+
+# Set to true to ignore issues with an assignee (defaults to false)
+exemptAssignees: false
+
+# Label to use when marking as stale
+staleLabel: stale
+
+# Comment to post when marking as stale
+markComment: >
+  Esta issue/PR foi marcada como stale devido à inatividade por 90 dias.
+  Ela será fechada em 14 dias se não houver atividade adicional.
+  Se você acredita que esta issue/PR ainda é relevante, por favor comente ou remova a label 'stale'.
+
+# Comment to post when removing the stale label
+unmarkComment: >
+  Esta issue/PR não é mais considerada stale. Obrigado por manter a discussão ativa!
+
+# Comment to post when closing a stale Issue or Pull Request
+closeComment: >
+  Esta issue/PR foi fechada devido à inatividade prolongada.
+  Se você ainda acredita que este tópico é relevante, sinta-se livre para reabri-la
+  ou criar uma nova issue/PR com contexto atualizado.
+
+# Limit the number of actions per hour
+limitPerRun: 30
