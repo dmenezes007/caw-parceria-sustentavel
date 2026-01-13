@@ -26,10 +26,10 @@ export const Footer: React.FC = () => {
         
         <div className="flex flex-col items-center md:items-end space-y-3 md:space-y-4">
           <span className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">Baseado em evidências</span>
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 grayscale opacity-60">
-            <a href="https://www.migalhas.com.br/depeso/441354/parceria-sustentavel-alinhando-entrega-juridica-e-cuidado-com-pessoas" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Migalhas</a>
-            <a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Gallup</a>
-            <a href="https://cajuina.org/principais/coluna-comp/o-custo-oculto-do-turnover/" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Cajuína</a>
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6">
+            <a href="https://www.migalhas.com.br/depeso/441354/parceria-sustentavel-alinhando-entrega-juridica-e-cuidado-com-pessoas" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-500 hover:text-indigo-600 transition-colors">Migalhas</a>
+            <a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-500 hover:text-indigo-600 transition-colors">Gallup</a>
+            <a href="https://cajuina.org/principais/coluna-comp/o-custo-oculto-do-turnover/" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-500 hover:text-indigo-600 transition-colors">Cajuína</a>
           </div>
           <p className="text-[10px] md:text-xs text-slate-400 mt-4 md:mt-8 text-center md:text-right px-4 md:px-0">
             © 2025 Corbo, Aguiar & Waise Adv. Ass. Todos os direitos reservados.
