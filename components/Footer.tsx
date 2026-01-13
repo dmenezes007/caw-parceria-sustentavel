@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
             <span className="text-lg font-bold text-slate-800">Cajuína</span>
           </div>
           <p className="text-xs text-slate-400 mt-8">
-            © 2024 PartnerLegal Strategy. Todos os direitos reservados.
+            © 2025 Corbo, Aguiar & Waise Adv. Ass. Todos os direitos reservados.
           </p>
         </div>
       </div>
