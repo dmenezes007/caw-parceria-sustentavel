@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
         <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-white opacity-[0.05] rounded-full blur-3xl group-hover:opacity-[0.1] transition-opacity duration-500" />
         <div className="relative z-10 max-w-3xl space-y-4 md:space-y-6">
           <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs md:text-sm font-bold tracking-wide uppercase">
-            Insight Estratégico
+            Insight
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug">
             E se sua próxima contratação reduzisse o retrabalho em <span className="text-indigo-200">30%</span>?
