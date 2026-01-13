@@ -6,27 +6,28 @@ export const ContactView: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <header className="text-center space-y-4">
-        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold uppercase tracking-wider">
+        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs md:text-sm font-bold uppercase tracking-wider">
           <Sparkles size={16} />
-          <span>Call to Action Suave</span>
+          <span className="hidden sm:inline">Call to Action Suave</span>
+          <span className="sm:hidden">CTA</span>
         </div>
-        <h2 className="text-4xl font-black text-slate-900 tracking-tight">Agende uma conversa para ver nossos KPIs</h2>
-        <p className="text-xl text-slate-500">Vamos conversar sobre como transformar sua eficiência jurídica?</p>
+        <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight px-4">Agende uma conversa para ver nossos KPIs</h2>
+        <p className="text-base md:text-xl text-slate-500 px-4">Vamos conversar sobre como transformar sua eficiência jurídica?</p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <button className="p-10 rounded-[2.5rem] bg-indigo-600 text-white text-left group transition-all hover:translate-y-[-4px] shadow-xl shadow-indigo-200">
-          <Calendar size={40} className="mb-6 text-indigo-200" />
-          <h3 className="text-2xl font-bold mb-2">Marcar Call Estratégica</h3>
-          <p className="text-indigo-100 mb-8 leading-relaxed">30 minutos para apresentarmos nosso dashboard de performance.</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <button className="p-6 md:p-10 rounded-[2.5rem] bg-indigo-600 text-white text-left group transition-all hover:translate-y-[-4px] shadow-xl shadow-indigo-200">
+          <Calendar size={32} className="mb-4 md:mb-6 text-indigo-200" />
+          <h3 className="text-xl md:text-2xl font-bold mb-2">Marcar Call Estratégica</h3>
+          <p className="text-sm md:text-base text-indigo-100 mb-6 md:mb-8 leading-relaxed">30 minutos para apresentarmos nosso dashboard de performance.</p>
           <div className="inline-flex items-center space-x-2 font-bold group-hover:translate-x-2 transition-transform">
             <span>Ver horários</span>
             <ArrowRight size={20} />
           </div>
         </button>
 
-        <div className="space-y-6">
-          <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex items-center space-x-6 hover:border-indigo-200 transition-colors cursor-pointer">
+        <div className="space-y-4 md:space-y-6">
+          <div className="p-6 md:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm flex items-center space-x-4 md:space-x-6 hover:border-indigo-200 transition-colors cursor-pointer">
             <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-600">
               <MessageSquare size={24} />
             </div>

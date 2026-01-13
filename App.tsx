@@ -35,7 +35,7 @@ const App: React.FC = () => {
 
       {/* Main Content Area */}
       <main className="flex-1 ml-20 md:ml-64 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 py-12 space-y-12 min-h-screen flex flex-col">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 md:py-12 space-y-8 md:space-y-12 min-h-screen flex flex-col">
           <div className="flex-1">
             {renderContent()}
           </div>

@@ -6,20 +6,20 @@ export const PerformanceView: React.FC = () => {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <header className="space-y-2">
-        <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Performance & Saúde Mental</h2>
-        <p className="text-slate-500 max-w-2xl">Dados globais provam: o bem-estar da equipe é o motor da produtividade em escala.</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Performance & Saúde Mental</h2>
+        <p className="text-sm md:text-base text-slate-500 max-w-2xl">Dados globais provam: o bem-estar da equipe é o motor da produtividade em escala.</p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="p-6 md:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4 md:space-y-6">
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600">
               <Globe2 size={24} />
             </div>
-            <h3 className="text-xl font-bold text-slate-800">O Custo Global da Inação</h3>
+            <h3 className="text-lg md:text-xl font-bold text-slate-800">O Custo Global da Inação</h3>
           </div>
           <div className="space-y-2">
-            <p className="text-5xl font-black text-slate-900">US$ 1 Tri</p>
+            <p className="text-3xl md:text-5xl font-black text-slate-900">US$ 1 Tri</p>
             <p className="text-slate-500 font-medium leading-relaxed">
               Perda anual global em produtividade devido a problemas de saúde mental (depressão e ansiedade).
             </p>
@@ -29,7 +29,7 @@ export const PerformanceView: React.FC = () => {
           </div>
         </div>
 
-        <div className="p-8 rounded-3xl bg-indigo-600 text-white shadow-xl shadow-indigo-200 space-y-6">
+        <div className="p-6 md:p-8 rounded-3xl bg-indigo-600 text-white shadow-xl shadow-indigo-200 space-y-4 md:space-y-6">
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-white">
               <Gauge size={24} />
@@ -52,9 +52,9 @@ export const PerformanceView: React.FC = () => {
         </div>
       </div>
 
-      <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
-        <h4 className="text-lg font-bold text-slate-800 mb-6">Nossa Matriz de Engajamento</h4>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div className="p-6 md:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+        <h4 className="text-base md:text-lg font-bold text-slate-800 mb-4 md:mb-6">Nossa Matriz de Engajamento</h4>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
           {[
             { title: "Foco no Matter", desc: "Menos distrações administrativas para o advogado" },
             { title: "Cultura de Feedback", desc: "Ciclos curtos de melhoria contínua" },

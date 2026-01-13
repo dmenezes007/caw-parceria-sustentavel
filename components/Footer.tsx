@@ -4,11 +4,11 @@ import { Mail, Linkedin, Globe } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="pt-12 border-t border-slate-200">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="space-y-4 text-center md:text-left">
-          <h4 className="text-xl font-bold text-slate-800">Conecte-se com Resultados</h4>
-          <p className="text-slate-500 max-w-sm">
+    <footer className="pt-8 md:pt-12 border-t border-slate-200">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+        <div className="space-y-3 md:space-y-4 text-center md:text-left">
+          <h4 className="text-lg md:text-xl font-bold text-slate-800">Conecte-se com Resultados</h4>
+          <p className="text-sm md:text-base text-slate-500 max-w-sm px-4 md:px-0">
             Evoluímos o modelo de prestação de serviço jurídico com base em dados, empatia e eficiência.
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
@@ -24,14 +24,14 @@ export const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="flex flex-col items-center md:items-end space-y-4">
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Baseado em evidências</span>
-          <div className="flex items-center space-x-6 grayscale opacity-60">
-            <a href="https://www.migalhas.com.br/depeso/441354/parceria-sustentavel-alinhando-entrega-juridica-e-cuidado-com-pessoas" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Migalhas</a>
-            <a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Gallup</a>
-            <a href="https://cajuina.org/principais/coluna-comp/o-custo-oculto-do-turnover/" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Cajuína</a>
+        <div className="flex flex-col items-center md:items-end space-y-3 md:space-y-4">
+          <span className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">Baseado em evidências</span>
+          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 grayscale opacity-60">
+            <a href="https://www.migalhas.com.br/depeso/441354/parceria-sustentavel-alinhando-entrega-juridica-e-cuidado-com-pessoas" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Migalhas</a>
+            <a href="https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Gallup</a>
+            <a href="https://cajuina.org/principais/coluna-comp/o-custo-oculto-do-turnover/" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-800 hover:opacity-100 transition-opacity">Cajuína</a>
           </div>
-          <p className="text-xs text-slate-400 mt-8">
+          <p className="text-[10px] md:text-xs text-slate-400 mt-4 md:mt-8 text-center md:text-right px-4 md:px-0">
             © 2025 Corbo, Aguiar & Waise Adv. Ass. Todos os direitos reservados.
           </p>
         </div>
