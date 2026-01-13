@@ -18,12 +18,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-20 md:w-64 bg-white border-r border-slate-200 flex flex-col py-8 z-50">
-      {/* Brand Logo Placeholder */}
-      <div className="px-6 mb-12 flex items-center justify-center md:justify-start space-x-3">
-        <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-100">
-          <LayoutDashboard size={24} />
-        </div>
-        <span className="hidden md:block font-bold text-slate-800 text-xl tracking-tight">PartnerLegal</span>
+      {/* Brand Logo */}
+      <div className="px-6 mb-12 flex items-center justify-center md:justify-start">
+        <img 
+          src="/logo/complete-logo.png" 
+          alt="CAW Parceria Sustentável" 
+          className="h-10 w-auto object-contain"
+        />
       </div>
 
       {/* Nav Items */}
