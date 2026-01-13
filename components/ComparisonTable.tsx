@@ -35,7 +35,7 @@ export const ComparisonTable: React.FC = () => {
       <table className="w-full text-left border-collapse min-w-[600px]">
         <thead>
           <tr className="border-b border-slate-100">
-            <th className="py-3 md:py-4 px-3 md:px-4 text-xs md:text-sm font-semibold text-slate-400">Critério</th>
+            <th className="py-3 md:py-4 px-3 md:px-4 text-xs md:text-sm font-semibold text-slate-500">Critério</th>
             <th className="py-3 md:py-4 px-3 md:px-4 text-xs md:text-sm font-bold text-indigo-700 bg-indigo-50/50 rounded-t-2xl">Modelo Híbrido (Núcleo CLT)</th>
             <th className="py-3 md:py-4 px-3 md:px-4 text-xs md:text-sm font-semibold text-slate-500">Outros Modelos</th>
           </tr>
