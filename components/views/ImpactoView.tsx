@@ -67,7 +67,9 @@ export const ImpactoView: React.FC = () => {
             <p className="text-sm md:text-lg italic text-slate-300 font-light leading-relaxed">
               "A parceria sustentável alinha a entrega jurídica ao cuidado com as pessoas, transformando um centro de custo em um diferencial competitivo de alta performance."
             </p>
-            <p className="mt-4 text-sm font-bold text-indigo-400">— Márcio Aguiar. Sócio Fundador da Corbo, Aguiar & Waise Advogados. Especialista em Direito Empresarial. Ex-Diretor Jurídico da Câmara de Comércio Luso Brasileira. Co-Autor da Enciclopédia de Direito do Desporto.
+            <p className="mt-4 text-sm font-bold text-indigo-400">— Márcio Aguiar
+            </p>
+            <p className="mt-4 text-xs italic text-white">Sócio Fundador da Corbo, Aguiar & Waise Advogados. Especialista em Direito Empresarial. Ex-Diretor Jurídico da Câmara de Comércio Luso Brasileira. Co-Autor da Enciclopédia de Direito do Desporto.
             </p>
           </div>
         </div>
