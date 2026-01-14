@@ -6,11 +6,6 @@ export const ContactView: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <header className="text-center space-y-4">
-        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs md:text-sm font-bold uppercase tracking-wider">
-          <Sparkles size={16} />
-          <span className="hidden sm:inline">Call to Action Suave</span>
-          <span className="sm:hidden">CTA</span>
-        </div>
         <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight px-4">Agende uma conversa para ver nossos KPIs</h2>
         <p className="text-base md:text-xl text-slate-500 px-4">Vamos conversar sobre como transformar sua eficiência jurídica?</p>
       </header>
