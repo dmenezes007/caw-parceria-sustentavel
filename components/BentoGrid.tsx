@@ -43,7 +43,7 @@ export const BentoGrid: React.FC = () => {
       <div className="md:col-span-4 p-6 md:p-8 rounded-3xl bg-indigo-50 border border-indigo-100 flex flex-col justify-between group">
         <div className="space-y-3 md:space-y-4">
           <Heart className="text-indigo-600" size={28} />
-          <h3 className="text-lg md:text-xl font-bold text-indigo-900">Produtividade Humana</h3>
+          <h3 className="text-lg md:text-xl font-bold text-indigo-900">Produtividade</h3>
           <p className="text-sm text-indigo-800/80 leading-relaxed">
             Depressão e ansiedade custam <b>US$ 1 trilhão</b> globalmente em produtividade perdida por ano. Parceiros focados em bem-estar garantem performance consistente.
           </p>
