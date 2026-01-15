@@ -193,7 +193,7 @@ export const ESGView: React.FC = () => {
                   <ShieldCheck className="text-green-400" size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-green-400 mb-1">Social (S)</h4>
+                  <h4 className="font-bold text-lg text-green-400 mb-1">Relações</h4>
                   <p className="text-sm text-slate-300 leading-relaxed">
                     Relações trabalhistas justas, inclusão e saúde mental essenciais para law firms com certificações GRI
                   </p>
@@ -205,7 +205,7 @@ export const ESGView: React.FC = () => {
                   <Scale className="text-indigo-400" size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-indigo-400 mb-1">Governança (G)</h4>
+                  <h4 className="font-bold text-lg text-indigo-400 mb-1">Governança</h4>
                   <p className="text-sm text-slate-300 leading-relaxed">
                     Compliance trabalhista (Lei 13.467/2017) mitigando riscos jurídicos e fortalecendo transparência
                   </p>
@@ -217,7 +217,7 @@ export const ESGView: React.FC = () => {
                   <Leaf className="text-emerald-400" size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-emerald-400 mb-1">Resiliência em Crises</h4>
+                  <h4 className="font-bold text-lg text-emerald-400 mb-1">Resiliência</h4>
                   <p className="text-sm text-slate-300 leading-relaxed">
                     Baixa rotatividade via quadro CLT demonstra compromisso ESG e fortalece continuidade operacional
                   </p>
