@@ -45,9 +45,6 @@ export const ESGView: React.FC = () => {
       {/* Header */}
       <header className="space-y-3">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center">
-            <Leaf className="text-green-600" size={28} />
-          </div>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">ESG em Ação</h2>
         </div>
         <p className="text-sm md:text-base text-slate-500 max-w-3xl">
@@ -56,7 +53,7 @@ export const ESGView: React.FC = () => {
       </header>
 
       {/* Hero Card - Núcleo CLT para Sólido Pilar Social */}
-      <div className="p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-green-600 to-emerald-700 text-white relative overflow-hidden">
+      <div className="p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-green-600 to-indigo-700 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32" />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24" />
         
@@ -256,9 +253,9 @@ export const ESGView: React.FC = () => {
 
       {/* CTA Final */}
       <div className="p-8 rounded-3xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4">Transforme ESG em Vantagem Competitiva</h3>
+        <h3 className="text-2xl md:text-3xl font-bold mb-4">Transformamos ESG em Vantagem Competitiva</h3>
         <p className="text-indigo-100 mb-6 max-w-2xl mx-auto">
-          Parceria sustentável com KPIs mensuráveis que elevam sua performance e reputação no mercado
+          KPIs mensuráveis que elevam nossa performance e reputação no mercado
         </p>
         <button className="px-8 py-4 bg-white text-indigo-600 rounded-2xl font-bold hover:bg-indigo-50 transition-all shadow-xl">
           Conheça Nossos Indicadores ESG
