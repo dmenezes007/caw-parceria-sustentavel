@@ -21,12 +21,14 @@
 - 🎯 **Previsibilidade** - Contratos claros e estruturados
 - ⚡ **Eficiência** - Processos otimizados e ágeis
 - 🌱 **Sustentabilidade** - Relacionamentos duradouros e transparentes
+- 🌿 **ESG em Ação** - Pilar Social com KPIs mensuráveis
 
 ### ✨ Características
 
 - Design moderno com Bento Grid Layout
 - Interface responsiva e intuitiva
-- Navegação por abas lateral
+- Navegação por abas lateral (Home, Impacto, Performance, ESG, Compliance, Contato)
+- Módulo ESG dedicado com métricas e evidências robustas
 - Ícones Lucide React
 - Tabelas comparativas interativas
 - Métricas de impacto visual

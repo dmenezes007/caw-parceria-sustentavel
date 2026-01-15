@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { LayoutDashboard, Users, BarChart3, ShieldCheck, MessageSquareMore, Home } from 'lucide-react';
+import { LayoutDashboard, Users, BarChart3, ShieldCheck, MessageSquareMore, Home, Leaf } from 'lucide-react';
 import logoImage from './logo/complete-logo.png';
 import simpleLogoImage from './logo/simple-logo.png';
 
@@ -14,6 +14,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
     { id: 'home', icon: Home, label: 'Início' },
     { id: 'impact', icon: BarChart3, label: 'Impacto' },
     { id: 'performance', icon: Users, label: 'Performance' },
+    { id: 'esg', icon: Leaf, label: 'ESG' },
     { id: 'risk', icon: ShieldCheck, label: 'Compliance' },
     { id: 'contact', icon: MessageSquareMore, label: 'Contato' },
   ];

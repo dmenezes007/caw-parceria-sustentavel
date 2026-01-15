@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { HomeView } from './components/views/HomeView';
 import { ImpactoView } from './components/views/ImpactoView';
 import { PerformanceView } from './components/views/PerformanceView';
+import { ESGView } from './components/views/ESGView';
 import { ComplianceView } from './components/views/ComplianceView';
 import { ContactView } from './components/views/ContactView';
 
@@ -19,6 +20,8 @@ const App: React.FC = () => {
         return <ImpactoView />;
       case 'performance':
         return <PerformanceView />;
+      case 'esg':
+        return <ESGView />;
       case 'risk':
         return <ComplianceView />;
       case 'contact':
