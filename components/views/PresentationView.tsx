@@ -4,10 +4,23 @@ import { FileText, Presentation, Download, Eye, X, ExternalLink } from 'lucide-r
 export const PresentationView: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentFile, setCurrentFile] = useState<{ file: string; title: string; type: 'pdf' | 'ppsx' } | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar dispositivo móvel
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Prevenir scroll do body quando o modal está aberto
   useEffect(() => {
     if (modalOpen) {
+      setIsLoading(true);
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = `${scrollbarWidth}px`;
@@ -269,13 +282,60 @@ export const PresentationView: React.FC = () => {
             </div>
 
             {/* Conteúdo do Modal */}
-            <div className="flex-1 overflow-hidden bg-slate-100 rounded-b-2xl">
+            <div className="flex-1 overflow-hidden bg-slate-100 rounded-b-2xl relative">
               {currentFile.type === 'pdf' ? (
-                <iframe
-                  src={`${currentFile.file}#toolbar=1&navpanes=1&scrollbar=1`}
-                  className="w-full h-full"
-                  title={currentFile.title}
-                />
+                <>
+                  {/* Indicador de Loading */}
+                  {isLoading && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-100 z-10">
+                      <div className="w-16 h-16 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin mb-4"></div>
+                      <p className="text-slate-600 font-medium">Carregando documento...</p>
+                      <p className="text-sm text-slate-500 mt-2">Isso pode levar alguns segundos</p>
+                    </div>
+                  )}
+                  
+                  {/* iFrame para desktop ou link direto para mobile */}
+                  {isMobile ? (
+                    <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center">
+                      <div className="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+                        <FileText size={40} className="text-indigo-600" />
+                      </div>
+                      <h4 className="text-xl font-bold text-slate-900 mb-3">
+                        Visualizar Documento PDF
+                      </h4>
+                      <p className="text-slate-600 mb-6 max-w-md">
+                        Para melhor experiência em dispositivos móveis, recomendamos abrir o PDF em uma nova aba ou fazer o download.
+                      </p>
+                      <div className="flex flex-col gap-3 w-full max-w-sm">
+                        <button
+                          onClick={(e) => { e.stopPropagation(); window.open(currentFile.file, '_blank'); }}
+                          onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); window.open(currentFile.file, '_blank'); }}
+                          className="px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 active:bg-indigo-800 transition-colors inline-flex items-center justify-center space-x-2"
+                        >
+                          <ExternalLink size={20} />
+                          <span>Abrir PDF</span>
+                        </button>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); handleDownload(currentFile.file); }}
+                          onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); handleDownload(currentFile.file); }}
+                          className="px-6 py-3 rounded-xl bg-slate-200 text-slate-700 font-semibold hover:bg-slate-300 active:bg-slate-400 transition-colors inline-flex items-center justify-center space-x-2"
+                        >
+                          <Download size={20} />
+                          <span>Baixar PDF</span>
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <iframe
+                      src={`${currentFile.file}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
+                      className="w-full h-full border-0"
+                      title={currentFile.title}
+                      onLoad={() => setIsLoading(false)}
+                      onError={() => setIsLoading(false)}
+                      style={{ minHeight: '500px' }}
+                    />
+                  )}
+                </>
               ) : (
                 <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center">
                   <div className="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
