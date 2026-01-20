@@ -1,7 +1,10 @@
-import React from 'react';
-import { FileText, Presentation, Download, Eye } from 'lucide-react';
+import React, { useState } from 'react';
+import { FileText, Presentation, Download, Eye, X, ExternalLink } from 'lucide-react';
 
 export const PresentationView: React.FC = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentFile, setCurrentFile] = useState<{ file: string; title: string; type: 'pdf' | 'ppsx' } | null>(null);
+
   const documents = [
     {
       title: 'Política de Combate ao Trabalho Infantil',
@@ -51,11 +54,35 @@ export const PresentationView: React.FC = () => {
   ];
 
   const handleOpenPresentation = () => {
-    window.open('./components/files/Apresentação Institucional - CAW - 2026.ppsx', '_blank');
+    setCurrentFile({
+      file: './components/files/Apresentação Institucional - CAW - 2026.ppsx',
+      title: 'Apresentação Institucional - CAW - 2026',
+      type: 'ppsx'
+    });
+    setModalOpen(true);
   };
 
-  const handleOpenDocument = (file: string) => {
-    window.open(file, '_blank');
+  const handleOpenDocument = (file: string, title: string) => {
+    setCurrentFile({
+      file,
+      title,
+      type: 'pdf'
+    });
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setTimeout(() => setCurrentFile(null), 300);
+  };
+
+  const handleDownload = (file: string) => {
+    const link = document.createElement('a');
+    link.href = file;
+    link.download = file.split('/').pop() || 'documento';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -115,7 +142,7 @@ export const PresentationView: React.FC = () => {
           {documents.map((doc, index) => (
             <div
               key={index}
-              onClick={() => handleOpenDocument(doc.file)}
+              onClick={() => handleOpenDocument(doc.file, doc.title)}
               className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-indigo-200 shadow-sm hover:shadow-md transition-all cursor-pointer group"
             >
               <div className="flex items-start space-x-4">
@@ -151,6 +178,93 @@ export const PresentationView: React.FC = () => {
           </p>
         </div>
       </div>
+
+      {/* Modal de Visualização */}
+      {modalOpen && currentFile && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={handleCloseModal}
+        >
+          <div 
+            className="relative w-full max-w-7xl h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header do Modal */}
+            <div className="flex items-center justify-between p-4 md:p-6 border-b border-slate-200 bg-slate-50 rounded-t-2xl">
+              <div className="flex-1 min-w-0 mr-4">
+                <h3 className="text-lg md:text-xl font-bold text-slate-900 truncate">
+                  {currentFile.title}
+                </h3>
+                <p className="text-sm text-slate-500 mt-1">
+                  {currentFile.type === 'pdf' ? 'Documento PDF' : 'Apresentação PowerPoint'}
+                </p>
+              </div>
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => handleDownload(currentFile.file)}
+                  className="p-2 md:p-3 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+                  title="Baixar arquivo"
+                >
+                  <Download size={20} />
+                </button>
+                <button
+                  onClick={() => window.open(currentFile.file, '_blank')}
+                  className="p-2 md:p-3 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300 transition-colors"
+                  title="Abrir em nova aba"
+                >
+                  <ExternalLink size={20} />
+                </button>
+                <button
+                  onClick={handleCloseModal}
+                  className="p-2 md:p-3 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300 transition-colors"
+                  title="Fechar"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+            </div>
+
+            {/* Conteúdo do Modal */}
+            <div className="flex-1 overflow-hidden bg-slate-100 rounded-b-2xl">
+              {currentFile.type === 'pdf' ? (
+                <iframe
+                  src={`${currentFile.file}#toolbar=1&navpanes=1&scrollbar=1`}
+                  className="w-full h-full"
+                  title={currentFile.title}
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center">
+                  <div className="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+                    <Presentation size={40} className="text-indigo-600" />
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-900 mb-3">
+                    Apresentação PowerPoint
+                  </h4>
+                  <p className="text-slate-600 mb-6 max-w-md">
+                    Arquivos .ppsx não podem ser visualizados diretamente no navegador. Use os botões acima para baixar ou abrir em nova aba.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <button
+                      onClick={() => handleDownload(currentFile.file)}
+                      className="px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-colors inline-flex items-center justify-center space-x-2"
+                    >
+                      <Download size={20} />
+                      <span>Baixar Apresentação</span>
+                    </button>
+                    <button
+                      onClick={() => window.open(currentFile.file, '_blank')}
+                      className="px-6 py-3 rounded-xl bg-slate-200 text-slate-700 font-semibold hover:bg-slate-300 transition-colors inline-flex items-center justify-center space-x-2"
+                    >
+                      <ExternalLink size={20} />
+                      <span>Abrir em Nova Aba</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
