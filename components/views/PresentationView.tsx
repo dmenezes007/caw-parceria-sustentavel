@@ -1,9 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FileText, Presentation, Download, Eye, X, ExternalLink } from 'lucide-react';
 
 export const PresentationView: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentFile, setCurrentFile] = useState<{ file: string; title: string; type: 'pdf' | 'ppsx' } | null>(null);
+
+  // Prevenir scroll do body quando o modal está aberto
+  useEffect(() => {
+    if (modalOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      // Adicionar classe para iOS
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+    };
+  }, [modalOpen]);
 
   const documents = [
     {
@@ -71,7 +101,11 @@ export const PresentationView: React.FC = () => {
     setModalOpen(true);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (e?: React.MouseEvent | React.TouchEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setModalOpen(false);
     setTimeout(() => setCurrentFile(null), 300);
   };
@@ -182,12 +216,19 @@ export const PresentationView: React.FC = () => {
       {/* Modal de Visualização */}
       {modalOpen && currentFile && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-2 md:p-4 bg-black/70 animate-in fade-in duration-200"
+          style={{ 
+            WebkitOverflowScrolling: 'touch',
+            touchAction: 'none'
+          }}
           onClick={handleCloseModal}
+          onTouchEnd={handleCloseModal}
         >
           <div 
             className="relative w-full max-w-7xl h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col animate-in zoom-in-95 duration-300"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => { e.stopPropagation(); }}
+            onTouchEnd={(e) => { e.stopPropagation(); }}
+            style={{ touchAction: 'auto' }}
           >
             {/* Header do Modal */}
             <div className="flex items-center justify-between p-4 md:p-6 border-b border-slate-200 bg-slate-50 rounded-t-2xl">
@@ -201,22 +242,25 @@ export const PresentationView: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <button
-                  onClick={() => handleDownload(currentFile.file)}
-                  className="p-2 md:p-3 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+                  onClick={(e) => { e.stopPropagation(); handleDownload(currentFile.file); }}
+                  onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); handleDownload(currentFile.file); }}
+                  className="p-2 md:p-3 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800 transition-colors"
                   title="Baixar arquivo"
                 >
                   <Download size={20} />
                 </button>
                 <button
-                  onClick={() => window.open(currentFile.file, '_blank')}
-                  className="p-2 md:p-3 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300 transition-colors"
+                  onClick={(e) => { e.stopPropagation(); window.open(currentFile.file, '_blank'); }}
+                  onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); window.open(currentFile.file, '_blank'); }}
+                  className="p-2 md:p-3 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300 active:bg-slate-400 transition-colors"
                   title="Abrir em nova aba"
                 >
                   <ExternalLink size={20} />
                 </button>
                 <button
-                  onClick={handleCloseModal}
-                  className="p-2 md:p-3 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300 transition-colors"
+                  onClick={(e) => { e.stopPropagation(); handleCloseModal(); }}
+                  onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); handleCloseModal(); }}
+                  className="p-2 md:p-3 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300 active:bg-slate-400 transition-colors"
                   title="Fechar"
                 >
                   <X size={20} />
@@ -245,15 +289,17 @@ export const PresentationView: React.FC = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button
-                      onClick={() => handleDownload(currentFile.file)}
-                      className="px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-colors inline-flex items-center justify-center space-x-2"
+                      onClick={(e) => { e.stopPropagation(); handleDownload(currentFile.file); }}
+                      onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); handleDownload(currentFile.file); }}
+                      className="px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 active:bg-indigo-800 transition-colors inline-flex items-center justify-center space-x-2"
                     >
                       <Download size={20} />
                       <span>Baixar Apresentação</span>
                     </button>
                     <button
-                      onClick={() => window.open(currentFile.file, '_blank')}
-                      className="px-6 py-3 rounded-xl bg-slate-200 text-slate-700 font-semibold hover:bg-slate-300 transition-colors inline-flex items-center justify-center space-x-2"
+                      onClick={(e) => { e.stopPropagation(); window.open(currentFile.file, '_blank'); }}
+                      onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); window.open(currentFile.file, '_blank'); }}
+                      className="px-6 py-3 rounded-xl bg-slate-200 text-slate-700 font-semibold hover:bg-slate-300 active:bg-slate-400 transition-colors inline-flex items-center justify-center space-x-2"
                     >
                       <ExternalLink size={20} />
                       <span>Abrir em Nova Aba</span>
