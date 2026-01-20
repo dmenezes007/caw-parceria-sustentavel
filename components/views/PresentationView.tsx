@@ -8,54 +8,54 @@ export const PresentationView: React.FC = () => {
   const documents = [
     {
       title: 'Política de Combate ao Trabalho Infantil',
-      file: './components/files/POLITICA COMBATE AO TRABALHO INFANTIL.pdf',
+      file: '/files/POLITICA COMBATE AO TRABALHO INFANTIL.pdf',
       description: 'Compromisso com a erradicação do trabalho infantil'
     },
     {
       title: 'Política sobre Trabalho Forçado ou Análogo ao Escravo',
-      file: './components/files/POLITICA TRABALHO FORÇADO OU ANALOGO ESCRAVO.pdf',
+      file: '/files/POLITICA TRABALHO FORÇADO OU ANALOGO ESCRAVO.pdf',
       description: 'Diretrizes contra trabalho forçado'
     },
     {
       title: 'Política de Incentivo à Contratação e Promoção de Negros, LGBTQIA+, Pessoas 45+',
-      file: './components/files/POLITICA CONTRATAÇÃO GRUPOS DIVERSIDADE.pdf',
+      file: '/files/POLITICA CONTRATAÇÃO GRUPOS DIVERSIDADE.pdf',
       description: 'Promoção da diversidade e inclusão'
     },
     {
       title: 'Política de RH',
-      file: './components/files/POLITICA RH.pdf',
+      file: '/files/POLITICA RH.pdf',
       description: 'Diretrizes de gestão de recursos humanos'
     },
     {
       title: 'Código de Ética',
-      file: './components/files/CÓDIGO DE ÉTICA.pdf',
+      file: '/files/CÓDIGO DE ÉTICA.pdf',
       description: 'Princípios éticos e conduta profissional'
     },
     {
       title: 'Política de Anticorrupção e Suborno',
-      file: './components/files/POLITICA ANTICORRUPÇÃO E SUBORNO.pdf',
+      file: '/files/POLITICA ANTICORRUPÇÃO E SUBORNO.pdf',
       description: 'Combate à corrupção e práticas ilícitas'
     },
     {
       title: 'Regulamento Interno de Segurança da Informação',
-      file: './components/files/RISI - REGULAMENTO INTERNO SEGURANÇA DA INFORMAÇÃO.pdf',
+      file: '/files/RISI - REGULAMENTO INTERNO SEGURANÇA DA INFORMAÇÃO.pdf',
       description: 'Proteção e segurança de dados'
     },
     {
       title: 'Declaração de Ergonomia',
-      file: './components/files/DECLARAÇÃO DE ERGONOMIA.pdf',
+      file: '/files/DECLARAÇÃO DE ERGONOMIA.pdf',
       description: 'Compromisso com a saúde e bem-estar'
     },
     {
       title: 'Política de Home Office (Teletrabalho)',
-      file: './components/files/POLITICA HOME OFFICE.pdf',
+      file: '/files/POLITICA HOME OFFICE.pdf',
       description: 'Diretrizes para trabalho remoto'
     }
   ];
 
   const handleOpenPresentation = () => {
     setCurrentFile({
-      file: './components/files/Apresentação Institucional - CAW - 2026.ppsx',
+      file: '/files/Apresentação Institucional - CAW - 2026.ppsx',
       title: 'Apresentação Institucional - CAW - 2026',
       type: 'ppsx'
     });
