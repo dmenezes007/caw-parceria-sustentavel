@@ -55,9 +55,9 @@ export const PresentationView: React.FC = () => {
 
   const handleOpenPresentation = () => {
     setCurrentFile({
-      file: '/files/Apresentação Institucional - CAW - 2026.ppsx',
+      file: '/files/Apresentação Institucional - CAW - 2026.pdf',
       title: 'Apresentação Institucional - CAW - 2026',
-      type: 'ppsx'
+      type: 'pdf'
     });
     setModalOpen(true);
   };
