@@ -7,7 +7,7 @@ import { ImpactoView } from './components/views/ImpactoView';
 import { PerformanceView } from './components/views/PerformanceView';
 import { ESGView } from './components/views/ESGView';
 import { ComplianceView } from './components/views/ComplianceView';
-import { ContactView } from './components/views/ContactView';
+import { PresentationView } from './components/views/PresentationView';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -24,8 +24,8 @@ const App: React.FC = () => {
         return <ESGView />;
       case 'risk':
         return <ComplianceView />;
-      case 'contact':
-        return <ContactView />;
+      case 'presentation':
+        return <PresentationView />;
       default:
         return <HomeView />;
     }
